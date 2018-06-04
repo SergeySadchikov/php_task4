@@ -13,15 +13,15 @@ if ($data === NULL) {
 	exit('Ошибка декодирования JSON');
 }
 
-!empty($data['name']) ? $cityName = $data['name'] : 'не удалось получить название города';
-!empty($data['weather'][0]['icon']) ? $weather_icon = $data['weather'][0]['icon'] : 'изображение недоступно';
-!empty($data['weather'][0]['description']) ? $weather_type = $data['weather'][0]['description'] : 'описание недоступно';
-!empty($data['main']['temp']) ? $temperarure = $data['main']['temp'] : 'данные отсутствуют';
-!empty($data['main']['pressure']) ? $pressure = $data['main']['pressure'] : 'данные отсутствуют';
-!empty($data['main']['humidity']) ? $humidity = $data['main']['humidity'] : 'данные отсутствуют';
-!empty($data['wind']['speed']) ? $windspeed = $data['wind']['speed'] : 'данные отсутствуют';
-!empty($data['sys']['sunrise']) ? $sunrise = $data['sys']['sunrise'] : 'данные отсутствуют';
-!empty($data['sys']['sunset']) ? $sunset = $data['sys']['sunset'] : 'данные отсутствуют';
+$cityName = !empty($data['name']) ? $data['name'] : 'не удалось получить название города';
+$weather_icon = !empty($data['weather'][0]['icon']) ? $data['weather'][0]['icon'] : 'изображение недоступно';
+$weather_type = !empty($data['weather'][0]['description']) ? $data['weather'][0]['description'] : 'описание недоступно';
+$temperarure = !empty($data['main']['temp']) ? $data['main']['temp'] : 'данные отсутствуют';
+$pressure = !empty($data['main']['pressure']) ? $data['main']['pressure'] : 'данные отсутствуют';
+$humidity = !empty($data['main']['humidity']) ? $data['main']['humidity'] : 'данные отсутствуют';
+$windspeed = !empty($data['wind']['speed']) ? $data['wind']['speed'] : 'данные отсутствуют';
+$sunrise = !empty($data['sys']['sunrise']) ? $data['sys']['sunrise'] : 'данные отсутствуют';
+$sunset = !empty($data['sys']['sunset']) ? $data['sys']['sunset'] : 'данные отсутствуют';
 
 $pressure = $pressure * 0.75006375541921; 
 $pressure = round($pressure); 
